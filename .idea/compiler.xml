@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Payment" />
         <module name="User" />
+        <module name="Gateway" />
         <module name="Teacher" />
         <module name="Discovery Server" />
         <module name="Student" />
@@ -21,6 +22,7 @@
       <module name="Admin" target="17" />
       <module name="Course" target="17" />
       <module name="Discovery Server" target="17" />
+      <module name="Gateway" target="17" />
       <module name="Notification" target="17" />
       <module name="Payment" target="17" />
       <module name="Student" target="17" />
@@ -31,6 +33,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Gateway" options="" />
       <module name="User" options="" />
     </option>
   </component>
