@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Admin/Admin.iml" filepath="$PROJECT_DIR$/Admin/Admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Course/Course.iml" filepath="$PROJECT_DIR$/Course/Course.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Discovery Server/Discovery Server.iml" filepath="$PROJECT_DIR$/Discovery Server/Discovery Server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Notification/Notification.iml" filepath="$PROJECT_DIR$/Notification/Notification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Payment/Payment.iml" filepath="$PROJECT_DIR$/Payment/Payment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Student/Student.iml" filepath="$PROJECT_DIR$/Student/Student.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Teacher/Teacher.iml" filepath="$PROJECT_DIR$/Teacher/Teacher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TechAcademy.iml" filepath="$PROJECT_DIR$/.idea/TechAcademy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/User/User.iml" filepath="$PROJECT_DIR$/User/User.iml" />
+    </modules>
+  </component>
+</project>

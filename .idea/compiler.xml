@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Payment" />
+        <module name="User" />
+        <module name="Teacher" />
+        <module name="Discovery Server" />
+        <module name="Student" />
+        <module name="Admin" />
+        <module name="Course" />
+        <module name="Notification" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Admin" target="17" />
+      <module name="Course" target="17" />
+      <module name="Discovery Server" target="17" />
+      <module name="Notification" target="17" />
+      <module name="Payment" target="17" />
+      <module name="Student" target="17" />
+      <module name="Teacher" target="17" />
+      <module name="TechAcademy" target="17" />
+      <module name="User" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="User" options="" />
+    </option>
+  </component>
+</project>
