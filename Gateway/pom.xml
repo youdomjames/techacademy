@@ -9,7 +9,6 @@
 	</parent>
 
 	<packaging>jar</packaging>
-
 	<artifactId>Gateway</artifactId>
 	<name>Gateway</name>
 
@@ -23,7 +22,6 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-gateway</artifactId>
 		</dependency>
-
 	</dependencies>
 
 </project>
