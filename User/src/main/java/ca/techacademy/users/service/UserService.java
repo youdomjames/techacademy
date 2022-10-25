@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Map;
 
 public interface UserService {
-    boolean addNewUser(Profile userProfile, Role role);
-    boolean updateUserProfile(String userId, Map<String, String> fields) throws ObjectNotFoundException;
+    Profile addNewUser(Profile userProfile, Role role);
+    Profile updateUserProfile(String userId, Map<String, String> fields) throws ObjectNotFoundException;
     Profile getUserById(String userId) throws ObjectNotFoundException;
     Profile getUserByEmail(String userEmail) throws ObjectNotFoundException;
     boolean updatePassword(String userId, String oldPassword, String newPassword) throws ObjectNotFoundException;

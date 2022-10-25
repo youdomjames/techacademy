@@ -18,8 +18,8 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
-    public ResponseEntity<Boolean> addUserHandler(@RequestBody Profile profile){
-        return new ResponseEntity<>(userService.addNewUser(profile, Role.STUDENT), HttpStatus.CREATED);
+    public ResponseEntity<Profile> addUserHandler(@RequestBody Profile profile, @RequestParam Role role){
+        return new ResponseEntity<>(userService.addNewUser(profile, role), HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")
@@ -31,7 +31,7 @@ public class UserController {
         return new ResponseEntity<>(userService.getUserByEmail(email), HttpStatus.OK);
     }
     @PatchMapping("{id}")
-    public ResponseEntity<Boolean> updateFieldsHandler(@PathVariable("id") String userId, @RequestBody Map<String, String> fields){
+    public ResponseEntity<Profile> updateFieldsHandler(@PathVariable("id") String userId, @RequestBody Map<String, String> fields){
         return new ResponseEntity<>(userService.updateUserProfile(userId, fields), HttpStatus.OK);
     }
     @PutMapping("/{id}")

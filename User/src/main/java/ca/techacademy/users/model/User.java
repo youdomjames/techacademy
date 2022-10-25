@@ -17,8 +17,9 @@ import java.io.Serializable;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class User implements Serializable {
+public class User extends BaseEntity implements Serializable {
     @Id
+    @Column(updatable = false)
     @GeneratedValue(generator="uuid")
     @GenericGenerator(name="uuid", strategy = "org.hibernate.id.UUIDGenerator")
     private String userId;
@@ -31,11 +32,22 @@ public class User implements Serializable {
     @NotNull
     private Status status;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "profile_id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
     private Profile profile;
 
     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JoinColumn(name = "credentials_id")
     private Credentials credentials;
+
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+        this.profile.setUser(this);
+        this.setStatus(profile.getStatus());
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+        this.profile.setStatus(status);
+    }
 }

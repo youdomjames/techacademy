@@ -36,7 +36,6 @@ public class GeneratorImpl implements Generator{
             }
         });
         specialCharacters.setNumberOfCharacters(1);
-
         return passwordGenerator.generatePassword(12, lowerCaseCharacters, upperCaseCharacters, digits, specialCharacters);
     }
 }
