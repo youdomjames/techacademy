@@ -1,4 +1,4 @@
-package ca.techacademy.course.model;
+package com.techacademy.courses.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

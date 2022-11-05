@@ -1,5 +1,6 @@
-package ca.techacademy.course.model;
+package com.techacademy.courses.model;
 
+import com.techacademy.courses.util.enums.Session;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -7,12 +8,13 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.NotNull;
 import java.time.Year;
 import java.util.List;
 
 @Data
 @Builder
-@Document
+
 @NoArgsConstructor
 @AllArgsConstructor
 public class Class {
@@ -24,6 +26,7 @@ public class Class {
     private List<String> studentIds;
     private List<String> assignmentIds;
     private List<String> examIds;
+    @NotNull
     private Session session;
     private Year year;
 }

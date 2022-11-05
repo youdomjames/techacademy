@@ -33,6 +33,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Course" options="" />
       <module name="Gateway" options="" />
       <module name="User" options="" />
     </option>

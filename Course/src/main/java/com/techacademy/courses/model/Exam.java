@@ -1,4 +1,4 @@
-package ca.techacademy.course.model;
+package com.techacademy.courses.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 
 @Data
 @Builder
-@Document
 @NoArgsConstructor
 @AllArgsConstructor
 public class Exam {
