@@ -30,7 +30,7 @@ public class User extends BaseEntity implements Serializable {
 
     @Enumerated(EnumType.STRING)
     @NotNull
-    private Status status;
+    private Status status = Status.ACTIVE;
 
     @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn

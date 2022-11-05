@@ -1,8 +1,12 @@
 package ca.techacademy.users.controler;
 
+import ca.techacademy.users.model.DTO.CredentialsDTO;
 import ca.techacademy.users.model.Profile;
 import ca.techacademy.users.service.UserService;
 import ca.techacademy.users.util.enums.Role;
+import ca.techacademy.users.util.exception.DuplicateObjectException;
+import ca.techacademy.users.util.exception.FieldNotSupportedException;
+import ca.techacademy.users.util.exception.FraudsterUserException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +22,7 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
+    @ExceptionHandler(DuplicateObjectException.class)
     public ResponseEntity<Profile> addUserHandler(@RequestBody Profile profile, @RequestParam Role role){
         return new ResponseEntity<>(userService.addNewUser(profile, role), HttpStatus.CREATED);
     }
@@ -31,12 +36,14 @@ public class UserController {
         return new ResponseEntity<>(userService.getUserByEmail(email), HttpStatus.OK);
     }
     @PatchMapping("{id}")
-    public ResponseEntity<Profile> updateFieldsHandler(@PathVariable("id") String userId, @RequestBody Map<String, String> fields){
+    @ExceptionHandler(FieldNotSupportedException.class)
+    public ResponseEntity<Profile> updateFieldsHandler(@PathVariable("id") String userId, @RequestBody Map<String, Object> fields){
         return new ResponseEntity<>(userService.updateUserProfile(userId, fields), HttpStatus.OK);
     }
     @PutMapping("/{id}")
-    public ResponseEntity<Boolean> updatePasswordHandler(@PathVariable("id") String userId, @RequestParam String oldPassword, @RequestParam String newPassword){
-        return new ResponseEntity<>(userService.updatePassword(userId, oldPassword, newPassword), HttpStatus.OK);
+    @ExceptionHandler(FraudsterUserException.class)
+    public ResponseEntity<Boolean> updatePasswordHandler(@PathVariable("id") String userId, @RequestBody CredentialsDTO credentialsDTO){
+        return new ResponseEntity<>(userService.updatePassword(userId, credentialsDTO), HttpStatus.OK);
     }
     @PutMapping("/{id}/inactivate")
     public ResponseEntity<Boolean> pauseUserHandler(@PathVariable("id") String userId){

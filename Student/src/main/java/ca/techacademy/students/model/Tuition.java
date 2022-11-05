@@ -14,7 +14,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Tuition {
-    private String tuitionId;
     private double totalAmount;
     private Status status;
     private List<Payment> payments;

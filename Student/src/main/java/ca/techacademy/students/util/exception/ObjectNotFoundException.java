@@ -1,4 +1,4 @@
-package ca.techacademy.users.util.exception;
+package ca.techacademy.students.util.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

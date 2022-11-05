@@ -32,8 +32,7 @@ public class Profile extends BaseEntity implements Serializable {
     private String lastName;
     private LocalDate dateOfBirth;
     @Enumerated(EnumType.STRING)
-    @Builder.Default
-    private Status status = Status.ACTIVE;
+    private Status status;
     @Column(unique = true)
     private String email;
     private String telephoneNumber;
