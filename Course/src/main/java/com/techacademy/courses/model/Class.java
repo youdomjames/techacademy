@@ -8,13 +8,12 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.validation.constraints.NotNull;
 import java.time.Year;
 import java.util.List;
 
 @Data
 @Builder
-
+@Document
 @NoArgsConstructor
 @AllArgsConstructor
 public class Class {
@@ -24,9 +23,9 @@ public class Class {
     private String courseId;
     private String teacherId;
     private List<String> studentIds;
-    private List<String> assignmentIds;
-    private List<String> examIds;
-    @NotNull
+    private List<Assignment> assignments;
+    private List<StudentAssignment> studentAssignments;
+    private List<StudentExam> studentExams;
     private Session session;
-    private Year year;
+    private int year;
 }

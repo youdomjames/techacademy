@@ -15,13 +15,11 @@ import java.io.File;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StudentAssignment {
-    @Id
-    private String assignmentId;
+    private String assignmentCode;
     private String studentId;
-    private String courseId;
     private Status status;
     private double score;
     private boolean emailSentToTeacher;
     private Character grade;
-    private File studentWorkFile;
+   // private File studentWorkFile;
 }

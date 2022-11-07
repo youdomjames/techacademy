@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Exam {
-    @Id
     private String examId;
     private String classId;
     private String name;

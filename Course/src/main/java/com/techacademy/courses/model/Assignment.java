@@ -15,12 +15,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Assignment {
-    @Id
-    private String assignmentId;
-    private String classId;
-    private String name;
+    private String assignmentCode;
     private LocalDateTime startDate;
     private LocalDateTime deadline;
-    private File assignmentFile;
+   // private File assignmentFile;
     private String teacherComments;
 }
